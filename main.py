@@ -9,7 +9,7 @@ import time
 import random
 import string
 
-def changer(input_string):
+def changer(input_string, x):
 
     # Convert the string to a list for easier manipulation
     chars = list(input_string)
@@ -19,7 +19,7 @@ def changer(input_string):
         return input_string
     
     # Select two unique random indices
-    indices = random.sample(range(len(chars)), 2)
+    indices = random.sample(range(len(chars)), x)
     
     # For each selected index, replace the letter with a random different letter
     for index in indices:
@@ -44,7 +44,7 @@ def submit_form(url, email, location, zipcode, description):
     # Setup Firefox
     options = Options()
     options.add_argument("-profile")
-    options.add_argument("CHANGE IT HERE")
+    options.add_argument("/home/bikisser/snap/firefox/common/.mozilla/firefox/illslh6c.selenium-profile")
     driver = webdriver.Firefox(options=options)
     
     try:
@@ -114,8 +114,8 @@ def main():
     
     # Your text strings for each field
 
-    email_string = ["QueerRightsAreHumanRights@fagmail.net", "IloveHRTandBottomSurgery@uwumail.kys", "TheGaysAreComingUwU@gmail.com", "DADDYSTOPTHRUSTINGITHURTS@PLEASE.com", "GawkOnMyGock@tgirls.com"]
-    location_string = ["YourMother'sHouse", "Pornhub.com", "Jizzrag County", "ProstitutesRus", "Elon sucking donald's left toe", "ILIKEYOURPP"]
+    email_string = ["QueerRightsAreHumanRights@fagmail.net", "IsItGayToSuckCockAsLongAsYouHateIt@trustmeimstraight.com", "WhyDoesTrumpLookLikeDoritoDustCoveredNakedMoleRat@mail.com","IloveHRTandBottomSurgery@uwumail.kys", "TheGaysAreComingUwU@gmail.com", "DADDYSTOPTHRUSTINGITHURTS@PLEASE.com", "GawkOnMyGock@tgirls.com"]
+    location_string = ["YourMother'sHouse", "Pornhub.com", "SayGex right now. Say it.", "I Love Taking 6 inch dog dildos", "Jizzrag County", "ProstitutesRus", "Elon sucking donald's left toe", "ILIKEYOURPP"]
     description_string = [" Can a girldick be trained to read braille? Just wondering, for SCIENCE!!!", "death to all trannies!!! disgusting misogynistic freaks ....wait why is abortion and bodily autonomy rights getting rolled back?!?!", "after putting all the trannies in concentration camps us real women will be in power!! ...wait why am i getting put into the same concentration camps too????", " I’m so happy that those “evil satan worshipping cannibalistic” trannys are all dead. 😈☺️🎀 What’s that? You’re going to force me to get pregnant, take off my shoes, go to the kitchen, and make you a sammich??? 😱 what? How? 🫠 ", "I hate trans people but they are allowed to live and I don't think we should kill them. I'm an ally."]
 
 
@@ -124,7 +124,7 @@ def main():
     # Run with a limit to prevent infinite loop
     while True:  # Adjust number of attempts as needed
         print(f"\nSubmission attempt #{counter}")
-        success = submit_form(form_url, changer(random.choice(email_string)), changer(random.choice(location_string)), str(random.randint(10000, 99999)), changer(random.choice(description_string)))
+        success = submit_form(form_url, changer(random.choice(email_string), 1), changer(random.choice(location_string), 2), str(random.randint(10000, 99999)), changer(random.choice(description_string), 4))
         
         if success:
             print(f"Submission #{counter} successful")
