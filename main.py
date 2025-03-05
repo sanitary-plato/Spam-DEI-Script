@@ -107,6 +107,68 @@ def submit_form(url, email, location, zipcode, description):
         # Close the browser
         driver.quit()
 
+def rand_zip_code():
+    """
+    Returns a randomly selected US school district zip code.
+    
+    Returns:
+        str: A randomly chosen school district zip code.
+    """
+    school_district_zips = [
+        # Major City School Districts
+        '10001', '60601', '90210', '02108', '33101', '75201', '98101', 
+        '02215', '85001', '94102', '77001', '30301', '20001', '80202', 
+        '15201', '55401', '46201', '94105', '01601', '84101', '02116', 
+        '50301',
+
+        # California School Districts
+        '90001', '90002', '90003', '90007', '90008', '90011', '90037', 
+        '90044', '90059', '90061', '90220', '90240', '90241', '90242', 
+        '90280', '90504', '90505', '90506', '90712', '90713', '90714',
+
+        # New York School Districts
+        '10002', '10003', '10004', '10005', '10006', '10007', 
+        '10010', '10011', '10012', '10013', '10014', '10016', '10017', 
+        '10018', '10019', '10020', '10022', '10023', '10024', '10025',
+
+        # Texas School Districts
+        '75001', '75006', '75007', '75010', '75019', '75022', '75023', 
+        '75024', '75025', '75028', '75030', '75038', '75039', '75040', 
+        '75041', '75042', '75043', '75044', '75048', '75078', '75080',
+
+        # Florida School Districts
+        '32801', '32803', '32804', '32806', '32807', '32808', '32809', 
+        '32810', '32811', '32812', '32822', '32824', '32825', '32826', 
+        '32827', '32828', '32829', '32830', '32835', '32837', '32839',
+
+        # Illinois School Districts
+        '60602', '60603', '60604', '60605', '60606', '60607', 
+        '60608', '60609', '60610', '60611', '60612', '60613', '60614', 
+        '60615', '60616', '60617', '60619', '60620', '60621', '60622',
+
+        # Pennsylvania School Districts
+        '15202', '15203', '15204', '15205', '15206', '15207', 
+        '15208', '15210', '15211', '15212', '15213', '15214', '15215', 
+        '15216', '15217', '15218', '15219', '15220', '15221', '15222',
+
+        # Ohio School Districts
+        '44101', '44102', '44103', '44104', '44105', '44106', '44107', 
+        '44108', '44109', '44110', '44111', '44112', '44113', '44114', 
+        '44115', '44116', '44117', '44118', '44119', '44120', '44121',
+
+        # Georgia School Districts
+        '30303', '30305', '30306', '30307', '30308', '30309', 
+        '30310', '30311', '30312', '30313', '30314', '30315', '30316', 
+        '30317', '30318', '30319', '30320', '30321', '30322',
+
+        # Washington School Districts
+        '98102', '98103', '98104', '98105', '98106', '98107', 
+        '98108', '98109', '98112', '98115', '98116', '98117', '98118', 
+        '98119', '98122', '98125', '98126', '98133', '98134', '98136'
+    ]
+    
+    return random.choice(school_district_zips)
+
 # Main infinite loop
 def main():
     # Replace with your form's URL
@@ -124,7 +186,7 @@ def main():
     # Run with a limit to prevent infinite loop
     while True:  # Adjust number of attempts as needed
         print(f"\nSubmission attempt #{counter}")
-        success = submit_form(form_url, changer(random.choice(email_string), 1), changer(random.choice(location_string), 2), str(random.randint(10000, 99999)), changer(random.choice(description_string), 4))
+        success = submit_form(form_url, changer(random.choice(email_string), 1), changer(random.choice(location_string), 2), str(rand_zip_code()), changer(random.choice(description_string), 4))
         
         if success:
             print(f"Submission #{counter} successful")
