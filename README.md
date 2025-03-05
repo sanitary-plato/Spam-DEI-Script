@@ -5,6 +5,7 @@ Script for spamming https://enddei.ed.gov
 So this is for spamming the US gov's DEI tipline. Also, this is considered a federal crime so ~~don't do it~~ USE A VPN :3
 
 Dependencies:
+
 Python:
 ``` Bash
 sudo apt install python3
@@ -16,6 +17,6 @@ pip install selenium
 
 Also this goes without saying but don't get caught (UwU)
 
-Also, credits to [u/The_Cool_Hierarchist](https://www.reddit.com/user/The_Cool_Hierarchist/) and [u/OctaazacubaneN8](https://www.reddit.com/user/OctaazacubaneN8/) (I shamelessly stole their comments from /transgendercirclejerk to serve as the description field. Also yes, I'm aware that this readme is a mess.
+Also, credits to [u/The_Cool_Hierarchist](https://www.reddit.com/user/The_Cool_Hierarchist/) and [u/OctaazacubaneN8](https://www.reddit.com/user/OctaazacubaneN8/) (I shamelessly stole their comments from /transgendercirclejerk to serve as the description field.) Also yes, I'm aware that this readme is a mess.
 
 Also don't forgot to change out the profile path variable which can be found by navigating to about:profiles. DO NOT USE THE .CACHE ONE, USE THE ONE WITH THE SHORTER PATH.
