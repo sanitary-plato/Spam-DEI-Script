@@ -25,7 +25,8 @@ def changer(input_string, x):
     for index in indices:
         # Get a random letter that is different from the current letter
         current_letter = chars[index]
-        possible_letters = [letter for letter in string.ascii_letters if letter != current_letter]
+        if current_letter != '@':
+            possible_letters = [letter for letter in string.ascii_letters if letter != current_letter]
         chars[index] = random.choice(possible_letters)
     
     # Convert back to a string and return
@@ -44,7 +45,8 @@ def submit_form(url, email, location, zipcode, description):
     # Setup Firefox
     options = Options()
     options.add_argument("-profile")
-    options.add_argument("/home/bikisser/snap/firefox/common/.mozilla/firefox/illslh6c.selenium-profile")
+    # Type about:profiles into firefox to get profile string 
+    options.add_argument("<insert profile string (the one without .cache)>")
     driver = webdriver.Firefox(options=options)
     
     try:
